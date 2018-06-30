@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-end">
   <a><%= link_to "Tecnyfarma", root_path, class: "navbar-brand" %></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+  <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+    <ul class="navbar-nav float-left">
       <% if user_signed_in? %>
         <li class="nav-item active">
           <a><%= link_to "Crear Producto", new_product_path, class: "nav-link" %><span class="sr-only"></span></a>
@@ -20,7 +20,7 @@
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
         </form>
       <% else %>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a><%= link_to "Registrate", new_user_registration_path, class: "nav-link" %></a>
         </li>
 
