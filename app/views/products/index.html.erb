@@ -24,9 +24,11 @@
         <td><%= product.stock %></td>
         <td><%= product.date %></td>
         <td><%= link_to "Ver más..", product_path(product), class: "btn btn-primary" %></td>
-        <td><%= link_to "Editar", edit_product_path(product), class: "btn btn-success" %></td>
-        <td><%= link_to "Eliminar", product_path(product), class: "btn btn-danger", method: :delete, data: { confirm: "Seguro que decea eliminarlo? " } %></td>
-      </tr>
+        <% if user_signed_in? %>
+          <td><%= link_to "Editar", edit_product_path(product), class: "btn btn-success" %></td>
+          <td><%= link_to "Eliminar", product_path(product), class: "btn btn-danger", method: :delete, data: { confirm: "Seguro que decea eliminarlo? " } %></td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
